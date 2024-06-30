@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Mi Cuenta - Galería de Arte Digital{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4 text-center">Mi Cuenta</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">Información de la cuenta</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0 font-weight-bold">Nombre de usuario</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{ user.username }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0 font-weight-bold">Correo electrónico</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{ user.email }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0 font-weight-bold">Fecha de registro</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{ user.date_joined|date:"d/m/Y" }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-light">
+                    <a href="{% url 'editar_perfil' %}" class="btn btn-primary">Editar Perfil</a>
+                    <a href="{% url 'cambiar_contrasena' %}" class="btn btn-secondary ml-2">Cambiar Contraseña</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

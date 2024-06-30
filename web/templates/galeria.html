@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Galería - Galería de Arte Digital{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-5">Galería de Obras</h1>
+    
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for obra in obras %}
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="{{ obra.imagen.url }}" class="card-img-top" alt="{{ obra.titulo }}" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ obra.titulo }}</h5>
+                    <p class="card-text"><small class="text-muted">Artista: {{ obra.artista.username }}</small></p>
+                    <p class="card-text"><span class="badge bg-secondary">{{ obra.get_estilo_display }}</span></p>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                    <a href="#" class="btn btn-outline-primary btn-sm">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <p class="text-center">No hay obras disponibles en este momento.</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <nav aria-label="Page navigation" class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+            </li>
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Siguiente</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}

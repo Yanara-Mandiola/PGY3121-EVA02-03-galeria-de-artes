@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}Surrealismo - Galería de Arte Digital{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="display-4 text-center mb-3">Surrealismo</h1>
+    
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <p class="lead text-center">
+                El surrealismo es un movimiento artístico y literario que surgió en la década de 1920, 
+                caracterizado por la expresión del pensamiento subconsciente, la yuxtaposición de imágenes 
+                oníricas y la exploración del mundo de los sueños y la imaginación.
+            </p>
+        </div>
+    </div>
+
+    <h2 class="h3 text-center mb-4">Obras Surrealistas en Nuestra Galería</h2>
+    
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for obra in obras %}
+        <div class="col">
+            <div class="card h-100 shadow-sm hover-card">
+                <div class="card-img-wrapper">
+                    <img src="{{ obra.imagen.url }}" class="card-img-top" alt="{{ obra.titulo }}">
+                    <div class="card-img-overlay d-flex align-items-end">
+                        <a href="#" class="btn btn-primary btn-sm mb-2">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ obra.titulo }}</h5>
+                    <p class="card-text"><small class="text-muted">Artista: {{ obra.artista.username }}</small></p>
+                    <p class="card-text obra-descripcion">{{ obra.descripcion|truncatewords:20 }}</p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <p class="text-center text-muted">No hay obras surrealistas disponibles en este momento.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .hover-card {
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+    .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    }
+    .card-img-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .hover-card:hover .card-img-top {
+        transform: scale(1.05);
+    }
+    .card-img-overlay {
+        opacity: 0;
+        background: rgba(0,0,0,0.5);
+        transition: opacity 0.3s ease;
+    }
+    .hover-card:hover .card-img-overlay {
+        opacity: 1;
+    }
+    .obra-descripcion {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+</style>
+{% endblock %}

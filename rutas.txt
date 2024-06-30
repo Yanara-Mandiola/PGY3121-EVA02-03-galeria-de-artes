@@ -1,0 +1,31 @@
+proyecto/
+├── app/
+│   ├── static/
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   ├── img/
+│   │   │   ├── placeholder1.jpg
+│   │   │   ├── placeholder2.jpg
+│   │   │   └── ...
+│   │   └── js/
+│   │       └── script.js
+│   ├── templates/
+│   │   ├── app/
+│   │   │   ├── base.html
+│   │   │   ├── contacto.html
+│   │   │   ├── dashboard-contacto.html
+│   │   │   ├── editar-perfil.html
+│   │   │   ├── galeria.html
+│   │   │   ├── impresionismo.html
+│   │   │   ├── index.html
+│   │   │   ├── login.html
+│   │   │   ├── mi-cuenta.html
+│   │   │   ├── publica-ahora.html
+│   │   │   ├── registrar-usuario.html
+│   │   │   ├── romanticismo.html
+│   │   │   └── surrealismo.html
+│   │   └── ...
+│   └── ...
+├── proyecto/
+│   ├── ...
+└── ...
