@@ -29,3 +29,9 @@ proyecto/
 ├── proyecto/
 │   ├── ...
 └── ...
+
+
+Superuser:
+-Usuario: yanara
+-Contraseña: yan.orellana
+-Correo (si solicita): yan.orellana@duocuc.cl

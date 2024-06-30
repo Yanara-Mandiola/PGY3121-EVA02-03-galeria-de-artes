@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-06-2024 a las 21:51:27
+-- Tiempo de generación: 30-06-2024 a las 21:59:22
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -142,6 +142,13 @@ CREATE TABLE `auth_user` (
   `is_active` tinyint(1) NOT NULL,
   `date_joined` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `auth_user`
+--
+
+INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
+(1, 'pbkdf2_sha256$720000$hMVxbOZBeiSPnPzfX7kxUG$d4+HSwUBb/ligduutXLZvlBm6kkfxGhAX/m5uZWLMqg=', '2024-06-30 21:57:53.010982', 1, 'yanara', '', '', 'yan.orellana@duocuc.cl', 1, 1, '2024-06-30 21:55:56.208897');
 
 -- --------------------------------------------------------
 
@@ -312,6 +319,13 @@ CREATE TABLE `web_perfil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Volcado de datos para la tabla `web_perfil`
+--
+
+INSERT INTO `web_perfil` (`id`, `avatar`, `bio`, `usuario_id`) VALUES
+(1, 'avatares/default.png', '', 1);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -447,7 +461,7 @@ ALTER TABLE `auth_permission`
 -- AUTO_INCREMENT de la tabla `auth_user`
 --
 ALTER TABLE `auth_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `auth_user_groups`
@@ -495,7 +509,7 @@ ALTER TABLE `web_evento`
 -- AUTO_INCREMENT de la tabla `web_perfil`
 --
 ALTER TABLE `web_perfil`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
